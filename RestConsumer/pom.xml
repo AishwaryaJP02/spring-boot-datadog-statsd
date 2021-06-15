@@ -110,7 +110,7 @@
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.36.0</version>
-                <configuration>
+<!--                <configuration>
                     <registry>registry.hub.docker.com</registry>
                     <images>
                         <image>
@@ -130,7 +130,7 @@
                             <goal>push</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
             <!--<plugin>
                 <groupId>io.fabric8</groupId>
