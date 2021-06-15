@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: rest-consumer-ms
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rest-consumer-ms
+spec:
+  type: ClusterIP
+  selector:
+    app: rest-consumer-ms
+  ports:
+  - port: 18080
+    targetPort: 18080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rest-consumer-ms
+  name: rest-consumer-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-consumer-ms
+  template:
+    metadata:
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+        'consul.hashicorp.com/connect-service-upstreams': 'rest-service1:10000,rest-service2:10001'
+      labels:
+        app: rest-consumer-ms
+    spec:
+      containers:
+      - name: rest-consumer
+#        image: testofwill22/rest-consumer:0.0.18-SNAPSHOT
+        image: {{container_image}}
+
+        env:
+          - name: CONSUL_HTTP_ADDR
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+          - name: MS_PROFILE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+        ports:
+        - containerPort: 18080
