@@ -30,7 +30,7 @@ spec:
     metadata:
       annotations:
         'consul.hashicorp.com/connect-inject': 'true'
-        'consul.hashicorp.com/connect-service-upstreams': 'rest-service1:10000,rest-service2,10001'
+        'consul.hashicorp.com/connect-service-upstreams': 'rest-service1:10000,rest-service2:10001'
       labels:
         app: rest-consumer-ms
     spec:
