@@ -39,8 +39,7 @@ spec:
        # image: testofwill22/rest-service:0.0.4-SNAPSHOT
         image: {{container_image}}
         imagePullPolicy: Always
-        imagePullSecrets:
-         - name: jfrog-secret
+        
          
         env:
           - name: CONSUL_HTTP_ADDR
@@ -48,4 +47,7 @@ spec:
               fieldRef:
                 fieldPath: status.hostIP
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
+        
+      imagePullSecrets:
+         - name: jfrog-secret  
