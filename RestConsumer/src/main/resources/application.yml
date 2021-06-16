@@ -47,7 +47,7 @@ management:
       exposure:
         include: '*'
         
-restService1:
+restService:
   localProxyPort: 10000
 restService2:
   localProxyPort: 10001 
