@@ -39,9 +39,7 @@ spec:
 #        image: testofwill22/rest-consumer:0.0.18-SNAPSHOT
         image: {{container_image}}
         imagePullPolicy: Always
-        imagePullSecrets:
-         - name: jfrog-secret
-
+        
 
         env:
           - name: CONSUL_HTTP_ADDR
@@ -54,3 +52,6 @@ spec:
                 fieldPath: metadata.namespace
         ports:
         - containerPort: 18080
+        
+      imagePullSecrets:
+         - name: jfrog-secret 
