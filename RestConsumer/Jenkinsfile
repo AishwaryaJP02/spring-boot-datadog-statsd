@@ -1,3 +1,3 @@
 @Library('gf-ifcs-poc-shared-library') _
-jenkinsForMsDemo 'git@github.com:AishwaryaJP02/spring-boot-datadog-statsd.git','consul-k8s-keyvalue','rest-consumer'
+jenkinsForMsDemo 'git@github.com:AishwaryaJP02/spring-boot-datadog-statsd.git','consul-k8s-keyvalue','RestConsumer','rest-consumer'
 //jenkinsForMsDemo 'https://github.com/AishwaryaJP02/spring-boot-datadog-statsd/tree/consul-k8s-keyvalue/RestConsumer','consul-k8s-keyvalue','restconsumer'
