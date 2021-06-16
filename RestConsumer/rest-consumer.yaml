@@ -38,6 +38,10 @@ spec:
       - name: rest-consumer
 #        image: testofwill22/rest-consumer:0.0.18-SNAPSHOT
         image: {{container_image}}
+        imagePullPolicy: Always
+        imagePullSecrets:
+         - name: jfrog-secret
+
 
         env:
           - name: CONSUL_HTTP_ADDR
