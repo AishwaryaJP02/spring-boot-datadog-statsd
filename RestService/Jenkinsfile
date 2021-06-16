@@ -1,2 +1,2 @@
 @Library('gf-ifcs-poc-shared-library') _
-jenkinsForMsDemo 'git@github.com:AishwaryaJP02/spring-boot-datadog-statsd.git','consul-k8s-keyvalue','RestService'
+jenkinsForMsDemo 'git@github.com:AishwaryaJP02/spring-boot-datadog-statsd.git','consul-k8s-keyvalue','rest-service'
